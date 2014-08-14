@@ -1,5 +1,5 @@
 class LuggagesController < ApplicationController
-  before_action :set_luggage, only: [:show, :edit, :update, :destroy]
+  before_action :set_luggage, only: [:show, :edit, :update, :destroy, :vote]
 
   # GET /luggages
   # GET /luggages.json
