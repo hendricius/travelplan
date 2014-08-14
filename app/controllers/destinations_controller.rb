@@ -1,5 +1,5 @@
 class DestinationsController < ApplicationController
-  before_action :set_destination, only: [:show, :edit, :update, :destroy]
+  before_action :set_destination, only: [:show, :edit, :update, :destroy, :vote]
 
   # GET /destinations
   # GET /destinations.json
