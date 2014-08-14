@@ -44,7 +44,7 @@ gem 'acts_as_votable', github: 'ryanto/acts_as_votable'
 gem 'binding_of_caller'
 gem 'bootstrap-sass', github: 'twbs/bootstrap-sass'
 gem 'bootstrap-sass-extras'
-gem 'simple_form'
+gem 'simple_form', git: "https://github.com/plataformatec/simple_form.git"
 gem 'validates_formatting_of'
 gem 'tzinfo-data'
 
