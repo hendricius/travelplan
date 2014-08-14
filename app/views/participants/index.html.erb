@@ -18,13 +18,8 @@
         <td><%= participant.name %></td>
         <td><%=l participant.created_at, format: :long %></td>
         <td>
-          <%= link_to participant_path(participant), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
-            <%= glyph 'info-sign' %>
-            <%= glyph 'pencil' %>
-          <%- end -%>
-          <%= link_to participant_path(participant), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
-            <%= glyph 'remove' %>
-          <%- end -%>
+          <%= link_to "Edit", participant_path(participant), :class => 'btn btn-default btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" %>
+          <%= link_to "Delete", participant_path(participant), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-default btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" %>
         </td>
       </tr>
     <% end %>

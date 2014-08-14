@@ -20,13 +20,8 @@
         <td><%= activity.name %></td>
         <td><%=l activity.created_at, format: :long %></td>
         <td>
-          <%= link_to activity_path(activity), :class => 'btn btn-default btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
-            <%= glyph 'info-sign' %>
-            <%= glyph 'pencil' %>
-          <%- end -%>
-          <%= link_to activity_path(activity), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-default btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
-            <%= glyph 'remove' %>
-          <%- end -%>
+          <%= link_to "Edit", activity_path(activity), :class => 'btn btn-default btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" %>
+          <%= link_to "Delete", activity_path(activity), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-default btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" %>
         </td>
       </tr>
     <% end %>
