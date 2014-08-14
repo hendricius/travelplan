@@ -1,0 +1,9 @@
+= simple_form_for @luggage do |f|
+  = f.input :name
+  = f.input :comment
+  = f.input :quantity
+  = f.input :importance
+  = f.input :price
+  = f.association :participant
+  = f.association :responsible_person
+  = f.button :submit

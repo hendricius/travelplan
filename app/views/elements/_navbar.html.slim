@@ -1,16 +1,17 @@
-nav.navbar.navbar-default role="navigation" 
-  .navbar-header
-    button.navbar-toggle data-target="#navbar-collapse-1" data-toggle="collapse" type="button" 
-      span.sr-only Toggle navigation
-      span.icon-bar
-      span.icon-bar
-      span.icon-bar
-    = link_to "Travel planner", defined?(root_path) ? root_path : "#", class: "navbar-brand"
-  #navbar-collapse-1.collapse.navbar-collapse
-    ul.nav.navbar-nav
-      li= link_to "Trips", trips_path
-      li= link_to "Participants", participants_path
-      li= link_to "Destinations", destinations_path
-      li= link_to "Activities", activities_path
-      li= link_to "Luggages", luggages_path
-    ul.nav.navbar-nav.navbar-right
+nav.navbar.navbar-default.navbar-fixed-top role="navigation" 
+  .container
+    .navbar-header
+      button.navbar-toggle data-target="#navbar-collapse-1" data-toggle="collapse" type="button" 
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to "Travel planner", defined?(root_path) ? root_path : "#", class: "navbar-brand"
+    #navbar-collapse-1.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li= link_to "Trips", trips_path
+        li= link_to "Participants", participants_path
+        li= link_to "Destinations", destinations_path
+        li= link_to "Activities", activities_path
+        li= link_to "Luggages", luggages_path
+      ul.nav.navbar-nav.navbar-right

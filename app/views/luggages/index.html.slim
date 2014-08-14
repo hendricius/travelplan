@@ -1,0 +1,29 @@
+- model_class = Luggage
+.page-header
+  h1= t '.title', :default => Luggage
+table.table.table-striped
+  thead
+    tr
+      th ID
+      th= model_class.human_attribute_name(:name)
+      th= model_class.human_attribute_name(:quantity)
+      th= model_class.human_attribute_name(:price)
+      th= model_class.human_attribute_name(:importance)
+      th= model_class.human_attribute_name(:taken_care_of_by_id)
+      th= model_class.human_attribute_name(:created_at)
+      th= t '.actions', :default => t("helpers.actions")
+  tbody
+    - @luggages.each do |luggage|
+      tr
+        td= luggage.id
+        td= luggage.name
+        td= luggage.quantity
+        td= luggage.price
+        td= luggage.importance
+        td= luggage.responsible_person.try(:name) || "-"
+        td= l luggage.created_at, format: :long
+        td
+          .btn-group
+            = link_to "Details", luggage_path(luggage), :class => 'btn btn-default btn-xs'
+            = link_to "Remove", luggage_path(luggage), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-default btn-xs'
+  = link_to "New", new_luggage_path, :class => 'btn btn-primary'
