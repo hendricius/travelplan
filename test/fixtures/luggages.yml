@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  trip_id: 
+  participant_id: 
+  quantity: 1
+  price: 1.5
+  comment: MyText
+  importance: 1
+  taken_care_of: 2014-08-14 19:04:58
+  taken_care_of_by_id: 1
+
+two:
+  name: MyString
+  trip_id: 
+  participant_id: 
+  quantity: 1
+  price: 1.5
+  comment: MyText
+  importance: 1
+  taken_care_of: 2014-08-14 19:04:58
+  taken_care_of_by_id: 1
