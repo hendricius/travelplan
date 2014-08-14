@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @luggage.name %>
+</p>
+
+<p>
+  <strong>Trip:</strong>
+  <%= @luggage.trip %>
+</p>
+
+<p>
+  <strong>Participant:</strong>
+  <%= @luggage.participant %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @luggage.quantity %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @luggage.price %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @luggage.comment %>
+</p>
+
+<p>
+  <strong>Importance:</strong>
+  <%= @luggage.importance %>
+</p>
+
+<p>
+  <strong>Taken care of:</strong>
+  <%= @luggage.taken_care_of %>
+</p>
+
+<p>
+  <strong>Taken care of by:</strong>
+  <%= @luggage.taken_care_of_by_id %>
+</p>
+
+<%= link_to 'Edit', edit_luggage_path(@luggage) %> |
+<%= link_to 'Back', luggages_path %>

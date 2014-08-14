@@ -1,0 +1,41 @@
+<h1>Listing luggages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Trip</th>
+      <th>Participant</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Comment</th>
+      <th>Importance</th>
+      <th>Taken care of</th>
+      <th>Taken care of by</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @luggages.each do |luggage| %>
+      <tr>
+        <td><%= luggage.name %></td>
+        <td><%= luggage.trip %></td>
+        <td><%= luggage.participant %></td>
+        <td><%= luggage.quantity %></td>
+        <td><%= luggage.price %></td>
+        <td><%= luggage.comment %></td>
+        <td><%= luggage.importance %></td>
+        <td><%= luggage.taken_care_of %></td>
+        <td><%= luggage.taken_care_of_by_id %></td>
+        <td><%= link_to 'Show', luggage %></td>
+        <td><%= link_to 'Edit', edit_luggage_path(luggage) %></td>
+        <td><%= link_to 'Destroy', luggage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Luggage', new_luggage_path %>
