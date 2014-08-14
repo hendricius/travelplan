@@ -1,0 +1,6 @@
+= simple_form_for @activity, :html => { :class => 'form-horizontal form-model' } do |f|
+  = f.input :name
+  = f.input :description
+  = f.association :participant
+  .form-group
+    = f.button :submit
