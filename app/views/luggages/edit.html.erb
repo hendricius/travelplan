@@ -1,6 +1,5 @@
-<h1>Editing luggage</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @luggage %> |
-<%= link_to 'Back', luggages_path %>
+<%- model_class = Luggage -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Luggage %></h1>
+</div>
+<%= render :partial => 'form' %>
