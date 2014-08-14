@@ -1,33 +1,40 @@
-<h1>Listing destinations</h1>
-
-<table>
+<%- model_class = Destination -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Destination %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Trip</th>
-      <th>Participant</th>
-      <th>Address</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:address) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @destinations.each do |destination| %>
       <tr>
+        <td><%= destination.id %></td>
         <td><%= destination.name %></td>
         <td><%= destination.description %></td>
-        <td><%= destination.trip %></td>
-        <td><%= destination.participant %></td>
         <td><%= destination.address %></td>
-        <td><%= link_to 'Show', destination %></td>
-        <td><%= link_to 'Edit', edit_destination_path(destination) %></td>
-        <td><%= link_to 'Destroy', destination, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l destination.created_at, format: :long %></td>
+        <td>
+          <%= link_to destination_path(destination), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to destination_path(destination), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Destination', new_destination_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_destination_path,
+            :class => 'btn btn-primary' %>
