@@ -47,12 +47,16 @@ gem 'bootstrap-sass-extras'
 gem 'simple_form', git: "https://github.com/plataformatec/simple_form.git"
 gem 'validates_formatting_of'
 gem 'tzinfo-data'
-
+gem 'pg'
 gem 'slim-rails'
 
 group :development do
   gem 'better_errors'
   gem 'pry-rails'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
 
 group :development, :test do
